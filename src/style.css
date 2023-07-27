@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.attribution {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background-image: url(https://avatars.githubusercontent.com/u/106533794?s=400&u=078510c3e3c9adc24bd5f2e8bccb69424a64c5a6&v=44);
+    background-size: 100%;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    z-index: 99;
+}
+
+.attribution p {
+    visibility: hidden;
+    position: fixed;
+    bottom: 4.5rem;
+    right: 5rem;
+    width: 16rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem 1rem 0;
+    background-color: var(--dark-blue);
+    font-size: .9rem;
+    z-index: 999;
+    box-shadow: 0 0 0.4rem var(--cyan);
+    transform: rotateY(90deg);
+    transform-origin: right;
+    transition: .8s cubic-bezier(.06, .8, .1, 1);
+    color: white;
+}
+
+.attribution a {
+    color: cyan;
+}
+
+.attribution:hover p {
+    visibility: visible;
+    transform: rotateY(0);
+    background-color: black;
+}
+
+.wrapper-row-02.open {
+    display: flex;
+}
+
+body.active {
+    height: 100%;
+    padding: 30px 0;
+}
+
+.btn-gradient-2 {
+    background: linear-gradient(#1E1F28, #1E1F28) padding-box,
+        linear-gradient(90deg, #8323FF 0%, #FF2DAF 100%) border-box;
+    border-radius: 16px;
+    border: 5px solid transparent;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    body.active{
+        padding: 0;
+    }
+}
+
+@layer components {
+    .btn-purple {
+        @apply bg-[linear-gradient(90deg,_#8323FF_0%,_#FF2DAF_100%)];
+    }
+
+    .title {
+        @apply text-white font-medium text-[20px] leading-[20px];
+    }
+
+    .watch {
+        @apply bg-gray-02 rounded-[4px] flex items-center justify-center gap-x-[8px] min-h-[44px] text-white font-normal text-[16px] leading-[20px] duration-300;
+    }
+}
+
+@layer base {
+    button {
+        @apply w-full rounded-[4px] duration-300 hover:opacity-[.83];
+    }
+}
